@@ -19,14 +19,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/iv_main_topImg"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/y500"
+                android:layout_height="400dp"
                 android:background="#b5b433"
                 android:src="@mipmap/ic_launcher"/>
-
 
             <com.lcw.view.ListViewForScrollView
                 android:id="@+id/lv_main_list"
@@ -35,10 +33,11 @@
                 android:divider="@null"
                 android:scrollbars="none"
                 />
+
         </LinearLayout>
     </com.lcw.view.ObservableScrollView>
 
 
-    <include layout="@layout/include_header_itl"/>
+    <include layout="@layout/include_header_itl" />
 
 </RelativeLayout>

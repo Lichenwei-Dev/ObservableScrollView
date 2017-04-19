@@ -3,21 +3,22 @@
     android:id="@+id/ll_header_content"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#00000000"
+    android:background="#000000"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y110"
-        android:fitsSystemWindows="false"
+        android:layout_height="80dp"
+        android:paddingTop="25dp"
+        android:fitsSystemWindows="true"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/iv_header_left"
-            android:layout_width="@dimen/x85"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:paddingLeft="@dimen/x15"
-            android:paddingRight="@dimen/x25"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp"
             android:src="@mipmap/icon_header_back" />
 
 
@@ -37,12 +38,12 @@
 
         <ImageView
             android:id="@+id/iv_header_img"
-            android:layout_width="@dimen/x85"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_gravity="center"
-            android:paddingLeft="@dimen/x15"
-            android:paddingRight="@dimen/x25"
+            android:paddingLeft="12dp"
+            android:paddingRight="8dp"
             android:src="@mipmap/icon_header_kefu" />
 
     </RelativeLayout>
