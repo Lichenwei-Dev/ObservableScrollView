@@ -8,9 +8,10 @@ import android.view.Window;
 import android.view.WindowManager;
 
 /**
+ * 设置系统状态栏和导航栏透明化
  * Create by: chenwei.li
- * Date: 2017/3/19
- * Time: 下午10:51
+ * Date: 2017/4/18
+ * Time: 下午11:01
  * Email: lichenwei.me@foxmail.com
  */
 

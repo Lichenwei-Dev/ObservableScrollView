@@ -1,22 +1,23 @@
 package com.lcw.view;
 
 import android.graphics.Color;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ViewTreeObserver;
-import android.view.WindowManager;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * 高仿美团APP页面滑动标题栏渐变效果
+ * Create by: chenwei.li
+ * Date: 2017/4/18
+ * Time: 下午10:51
+ * Email: lichenwei.me@foxmail.com
+ */
 public class MainActivity extends AppCompatActivity implements ObservableScrollView.OnObservableScrollViewListener {
 
     private ObservableScrollView mObservableScrollView;
-    private TextView mImageView;
+    private TextView mTextView;
     private LinearLayout mHeaderContent;
 
     private int mHeight;
@@ -30,25 +31,22 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
 
         //初始化控件
         mObservableScrollView = (ObservableScrollView) findViewById(R.id.sv_main_content);
-        mImageView = (TextView) findViewById(R.id.iv_main_topImg);
+        mTextView = (TextView) findViewById(R.id.tv_main_topContent);
         mHeaderContent = (LinearLayout) findViewById(R.id.ll_header_content);
-        }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
         //获取标题栏高度
-        ViewTreeObserver viewTreeObserver = mImageView.getViewTreeObserver();
+        ViewTreeObserver viewTreeObserver = mTextView.getViewTreeObserver();
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                mImageView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                mHeight = mImageView.getHeight() - mHeaderContent.getHeight();//这里取的高度应该为图片的高度-标题栏
+                mTextView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                mHeight = mTextView.getHeight() - mHeaderContent.getHeight();//这里取的高度应该为图片的高度-标题栏
                 //注册滑动监听
                 mObservableScrollView.setOnObservableScrollViewListener(MainActivity.this);
             }
         });
     }
+
 
     /**
      * 获取ObservableScrollView的滑动数据
@@ -65,8 +63,8 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
             mHeaderContent.setBackgroundColor(Color.argb(0, 48, 63, 159));
         } else if (t > 0 && t < mHeight) {
             //滑动过程中，渐变
-            float scale = (float) t / mHeight;
-            float alpha = (255 * scale);
+            float scale = (float) t / mHeight;//算出滑动距离比例
+            float alpha = (255 * scale);//得到透明度
             mHeaderContent.setBackgroundColor(Color.argb((int) alpha, 48, 63, 159));
         } else {
             //过顶部图区域，标题栏定色
