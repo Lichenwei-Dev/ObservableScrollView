@@ -22,11 +22,10 @@ public class StatusbarUtils {
      */
     public static void enableTranslucentStatusbar(Activity activity) {
 
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = activity.getWindow();
-            // Translucent status bar
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            // Translucent navigation bar
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         }
 
