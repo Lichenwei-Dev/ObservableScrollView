@@ -16,7 +16,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements ObservableScrollView.OnObservableScrollViewListener {
 
     private ObservableScrollView mObservableScrollView;
-    private ListViewForScrollView mListView;
     private TextView mImageView;
     private LinearLayout mHeaderContent;
 
@@ -25,35 +24,15 @@ public class MainActivity extends AppCompatActivity implements ObservableScrollV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            //透明状态栏
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//            //透明导航栏
-//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-//        }
+        //设置透明状态栏
         StatusbarUtils.enableTranslucentStatusbar(this);
         setContentView(R.layout.activity_main);
 
         //初始化控件
         mObservableScrollView = (ObservableScrollView) findViewById(R.id.sv_main_content);
-        mListView = (ListViewForScrollView) findViewById(R.id.lv_main_list);
         mImageView = (TextView) findViewById(R.id.iv_main_topImg);
         mHeaderContent = (LinearLayout) findViewById(R.id.ll_header_content);
-
-        mImageView.setFocusable(true);
-        mImageView.setFocusableInTouchMode(true);
-        mImageView.requestFocus();
-
-        List<String> mList = new ArrayList<String>();
-        for (int i = 0; i < 10; i++) {
-            mList.add("测试数据" + i);
         }
-        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(this, android.R.layout
-                .simple_expandable_list_item_1, mList);
-        mListView.setAdapter(stringArrayAdapter);
-
-    }
 
     @Override
     protected void onResume() {

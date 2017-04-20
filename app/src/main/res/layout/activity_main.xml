@@ -10,34 +10,39 @@
         android:id="@+id/sv_main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="none"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/iv_main_topImg"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="280dp"
                 android:background="#b5b433"
-                android:src="@mipmap/ic_launcher"/>
+                android:gravity="center"
+                android:src="@mipmap/ic_launcher"
+                android:text="我是头部"
+                android:textSize="22sp"/>
 
-            <com.lcw.view.ListViewForScrollView
-                android:id="@+id/lv_main_list"
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:divider="@null"
-                android:scrollbars="none"
-                />
+                android:layout_height="600dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:src="@mipmap/ic_launcher"
+                android:text="我是内容"
+                android:textSize="22sp"/>
 
         </LinearLayout>
     </com.lcw.view.ObservableScrollView>
 
 
-    <include layout="@layout/include_header_itl" />
+    <include layout="@layout/include_header_itl"/>
 
 </RelativeLayout>

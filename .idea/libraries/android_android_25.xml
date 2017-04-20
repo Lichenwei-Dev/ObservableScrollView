@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="android-android-25">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Android/SDK/platforms/android-25/android.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../Android/SDK/sources/android-25" />
+    </SOURCES>
+  </library>
+</component>
